@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AntScript : MonoBehaviour {
+public class AntControl : MonoBehaviour {
 
 	float fSpeed = 2f;	// 개미의 이동 속도
 	float fAmtToMove;
@@ -17,20 +17,22 @@ public class AntScript : MonoBehaviour {
 	void Update () 
 	{
 		fAmtToMove = fSpeed * Time.smoothDeltaTime;			// 프레임에 이동할 거리
-		transform.Translate(Vector3.forward * fAmtToMove);		// 개미 이동
-		//fAmtToMove = transform.position.y - (fSpeed * Time.deltaTime);								// 프레임에 이동할 거리
-		//transform.position = new Vector3 (transform.position.x, fAmtToMove, transform.position.z);// 개미 이동
-
+		transform.Translate(Vector3.left * fAmtToMove);		// 개미 이동
 		//fAmtToMove = transform.position.x - (fSpeed * Time.deltaTime);								// 프레임에 이동할 거리
 		//transform.position = new Vector3 (fAmtToMove, transform.position.y, transform.position.z);	// 개미 이동
+
+		if (transform.position.x <= 2) 
+		{
+			Destroy(gameObject);	
+		}
 	}
 
-	void OnTriggerEnter (Collider other)
+	/*void OnTriggerEnter (Collider other)
 	{
 		if(other.gameObject.name == "Castle")
 		{
 			//GameObject.Destroy(other.gameObject);
 			GameObject.Destroy(this.gameObject);
 		}
-	}
+	}*/
 }
