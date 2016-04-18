@@ -3,11 +3,11 @@ using System.Collections;
 
 public class TurretScript : MonoBehaviour {
 
-	private float 		fZ, fDistance = 0.0f;
-	public Transform 	target;
-	public float 		fPower = 600;		// 초코 발사 속도
+	private float 		fZ = 0.0f;
+	public float 		fPower = 500;		// 초코 발사 속도
 	public Transform 	Choco;				// 초코 추가
-	public GameObject	Turret;				// 포탑
+
+	public AudioClip chocoSnd;
 
 	float fRotSpeed = 100f;			// 포탑의 회전속도
 
@@ -16,8 +16,6 @@ public class TurretScript : MonoBehaviour {
 	void Start () 
 	{
 		fZ = transform.eulerAngles.z;
-
-		fDistance = (transform.position - target.position).magnitude;
 	}
 	
 	// Update is called once per frame
@@ -36,8 +34,10 @@ public class TurretScript : MonoBehaviour {
 		{
 			GameObject spPoint = GameObject.Find ("SpawnPoint");
 
-			Rigidbody myChoco = Instantiate (Choco, spPoint.transform.position, spPoint.transform.rotation) as Rigidbody;
-			myChoco.AddForce (spPoint.transform.forward * fPower);
+			Transform myChoco = (Transform)Instantiate (Choco, spPoint.transform.position, spPoint.transform.rotation);
+			AudioSource.PlayClipAtPoint (chocoSnd, transform.position);
+			myChoco.GetComponent<Rigidbody>().AddForce (spPoint.transform.up * fPower);				
+			// 그냥 rigidbody쓰면 안됨.
 		}
 	}
 
@@ -50,4 +50,5 @@ public class TurretScript : MonoBehaviour {
 		}
 		return Mathf.Clamp(angle, min, max);
 	}
+
 }

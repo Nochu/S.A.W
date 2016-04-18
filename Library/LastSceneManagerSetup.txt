@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SAWGame.unity
+- path: Assets/Scenes/SAWGame.unity
   isLoaded: 1
   isActive: 1
