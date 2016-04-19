@@ -25,7 +25,7 @@ public class AntCreate : MonoBehaviour {
 
 		if (Score.nRound == 1) 
 		{	// 1 ROUND
-			startPos = new Vector3 (9, -3, 3.42f);						//개미들의 생성위치
+			startPos = new Vector3 (9, -4, 3.42f);						//개미들의 생성위치
 			Instantiate (pfWorkAnt, startPos, Quaternion.Euler (0, 0, 0));	//생성
 
 			++nAntCount;

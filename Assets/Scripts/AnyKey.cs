@@ -10,4 +10,9 @@ public class AnyKey : MonoBehaviour {
 			Application.LoadLevel ("SAWMenu");
 		}
 	}
+
+	void OnGUI()
+	{
+		GUI.Label (new Rect (302, 300, 200, 50), "Press Any Key to Go to the Menu");
+	}
 }
