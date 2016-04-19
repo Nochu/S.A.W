@@ -9,7 +9,6 @@ public class Score : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -19,8 +18,8 @@ public class Score : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect (10, 10, 120, 20), "NOW ROUND : " + nRound);
-		GUI.Label (new Rect (10, 30, 120, 20), "KILL ANT : " + nScore);
-		GUI.Label (new Rect (10, 50, 120, 20), "CASTLE HP : " + nLife);
+		GUI.Label (new Rect (680, 10, 120, 20), "NOW ROUND : " + nRound);
+		GUI.Label (new Rect (680, 30, 120, 20), "KILL ANT : " + nScore);
+		GUI.Label (new Rect (680, 50, 120, 20), "CASTLE HP : " + nLife);
 	}
 }

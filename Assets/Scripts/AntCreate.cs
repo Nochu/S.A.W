@@ -64,8 +64,10 @@ public class AntCreate : MonoBehaviour {
 		} 
 		else
 		{	// 3 ROUND
-			if (nAntCount == 80)
+			if (nAntCount == 80) 
+			{
 				Score.nRound = 4;
+			}
 
 			if (nAntCount == 5 || nAntCount == 30 || nAntCount == 40) 
 			{	// 일개미 생성 5, 10, 20마리째
