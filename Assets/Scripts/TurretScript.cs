@@ -30,7 +30,7 @@ public class TurretScript : MonoBehaviour {
 
 		transform.rotation = rotation;
 
-		if (Input.GetButtonDown ("Fire Choco")) 			// 스페이스바를 누르면 초코발사
+		if (Input.GetKeyDown(KeyCode.Space)/*GetButtonDown ("Fire Choco")*/) 			// 스페이스바를 누르면 초코발사
 		{
 			GameObject spPoint = GameObject.Find ("SpawnPoint");
 

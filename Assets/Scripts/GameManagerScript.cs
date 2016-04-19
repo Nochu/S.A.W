@@ -13,6 +13,8 @@ public class GameManagerScript : MonoBehaviour {
 	void Update ()
 	{
 		if (Score.nRound == 4)
-			Application.LoadLevel ("SAWMenu");
+			Application.LoadLevel ("SAWWin");
+		if (Score.nLife == 0)
+			Application.LoadLevel ("SAWLoss");
 	}
 }
